@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tuscia Linux User Group</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        <link rel="stylesheet" href="js/jquery.mobile-1.3.1.min.css" />
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/jquery-migrate-1.1.1.min.js"></script>
+		<script src="js/jquery.mobile-1.3.1.min.js"></script>
+		
+		
+		<script type="text/javascript" charset="utf-8" src="js/cordova-2.9.0.js"></script>
+		<script type="text/javascript" src="js/index.js"></script> <!-- Inizializza il cordova -->
+	
+	<script type="text/javascript">
+	document.addEventListener("deviceready", onDeviceReady, false);
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.splashscreen.hide();
+    }
+	</script>
+	
+	<!-- Utility rubrica per il direttivo -->	
+	<script type="text/javascript">
+	document.addEventListener("salvasimone", salvasimone, false);
+	
+	function salvasimone() {
+		var contactsimone = navigator.contacts.create();
+			contactsimone.displayName = "Simone TuLUG";
+			contactsimone.nickname = "Simone TuLUG";       //specify both to support all devices
+			var namesimone = new ContactName();
+			namesimone.givenName = "Simone";
+			namesimone.familyName = "TuLUG";
+			contactsimone.name = namesimone;
+			// store contact phone numbers in ContactField[]
+			var phoneNumbers = [];
+			phoneNumbers[0] = new ContactField('work', '12121212', false);
+			contactsimone.phoneNumbers = phoneNumbers;
+			contactsimone.save(onSaveSuccess,onSaveError);
+	}
+
+	document.addEventListener("salvamauro", salvamauro, false);
+	
+	function salvamauro() {
+		var contactmauro = navigator.contacts.create();
+			contactmauro.displayName = "Mauro TuLUG";
+			contactmauro.nickname = "Mauro TuLUG";       //specify both to support all devices
+			var namemauro = new ContactName();
+			namemauro.givenName = "Mauro";
+			namemauro.familyName = "TuLUG";
+			contactmauro.name = namemauro;
+			// store contact phone numbers in ContactField[]
+			var phoneNumbers = [];
+			phoneNumbers[0] = new ContactField('work', '1111111', false);
+			contactmauro.phoneNumbers = phoneNumbers;
+			contactmauro.save(onSaveSuccess,onSaveError);
+	}
+	
+	document.addEventListener("salvaivan", salvaivan, false);
+
+	function salvaivan() {
+		var contactivan = navigator.contacts.create();
+			contactivan.displayName = "Ivan TuLUG";
+			contactivan.nickname = "Ivan TuLUG";       //specify both to support all devices
+			var nameivan = new ContactName();
+			nameivan.givenName = "Ivan";
+			nameivan.familyName = "TuLUG";
+			contactivan.name = nameivan;
+			// store contact phone numbers in ContactField[]
+			var phoneNumbers = [];
+			phoneNumbers[0] = new ContactField('work', '22222222', false);
+			contactivan.phoneNumbers = phoneNumbers;
+			contactivan.save(onSaveSuccess,onSaveError);
+	}
+	
+	document.addEventListener("salvalorenzo", salvalorenzo, false);
+
+	function salvalorenzo() {
+		var contactlorenzo = navigator.contacts.create();
+			contactlorenzo.displayName = "Lorenzo TuLUG";
+			contactlorenzo.nickname = "Lorenzo TuLUG";       //specify both to support all devices
+			var namelorenzo = new ContactName();
+			namelorenzo.givenName = "Lorenzo";
+			namelorenzo.familyName = "TuLUG";
+			contactlorenzo.name = namelorenzo;
+			// store contact phone numbers in ContactField[]
+			var phoneNumbers = [];
+			phoneNumbers[0] = new ContactField('work', '3333333', false);
+			contactlorenzo.phoneNumbers = phoneNumbers;
+			contactlorenzo.save(onSaveSuccess,onSaveError);
+	}
+	
+	// onSaveSuccess: Get a snapshot of the current contacts
+    //
+    function onSaveSuccess(contact) {
+		 navigator.notification.alert(
+            'Contatto salvato in rubrica',  // message
+            'Info',            // title
+            'Ok'                  // buttonName
+        );
+
+    }
+
+    // onSaveError: Failed to get the contacts
+    //
+    function onSaveError(contactError) {
+		 navigator.notification.alert(
+            'Errore: Contatto esistente',  // message
+            'Info',            // title
+            'Ok'                  // buttonName
+        );
+
+    }
+</script>
+<!-- Fine utility rubrica per il direttivo -->
+
+        <link rel="stylesheet" href="style.css" />
+        <meta name="layout" content="mobile"/>          
+    </head>
+
+    <body>
+     	<div id="home" data-role="page">
+            <div data-role="header" data-theme="a">
+                <h3>TuLUG</h3>
+                <a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home" data-ajax="false">Home</a>
+            </div>
+
+            <div data-role="content" data-theme="a">
+				<div class="ui-grid-a">
+					<div class="ui-block-a"><div class="ui-bar ui-bar" style="height:150px"><a href="#direttivo"><img src="img/img_contatti.png" width="50" height="50"><br>Contatti</a></div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar" style="height:150px"><a href="#corsi"><img src="img/img_corsi.png" width="50" height="50"><br>Corsi</a></div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar" style="height:150px"><a href="#calendario"><img src="img/img_calendario.png" width="50" height="50"><br>Calendario</a></div></div>
+					<div class="ui-block-b"><div class="ui-bar ui-bar" style="height:150px"><a href="#mappa"><img src="img/img_mappa.png" width="50" height="50"><br>Mappa</a></div></div>
+					<div class="ui-block-a"><div class="ui-bar ui-bar" style="height:150px"><a href="#ml"><img src="img/img_ml.png" width="50" height="50"><br>Mailing List</a></div></div>
+				</div>
+            </div>
+       	</div>
+		
+	<!--  MAPPA -->     
+  		<div id="mappa" data-role="page" class="details-page">
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClvMwGHOkA9805VA_ziensp-e9KiIkh_k&sensor=true"></script>
+        	    <div data-role="header" data-theme="a">
+        	        <h3>Mappa TuLUG</h3>
+        	        <a href="#" data-rel="back" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home" data-ajax="false">Home</a>
+				</div>
+				<a href="#" id="btngeo" data-role="button" data-theme="a">Aggiorna posizione</a>
+	            <div data-role="content" id="map_content" data-theme="a">
+	                <div id="map_content">
+	                    <div id="map_canvas"></div>
+	                </div>
+	            </div>
+	    </div>
+	
+	    <script type="text/javascript" src="js/mobile.js"></script>
+	    <script type="text/javascript">
+
+	        var directionDisplay;
+	    	var directionsService = new google.maps.DirectionsService();
+	    	var map;
+	    	  
+	        function initialize() {
+	       	 
+				directionsDisplay = new google.maps.DirectionsRenderer();
+	       	  
+				var mapOptions = {
+					center: new google.maps.LatLng(42.412163, 12.103582),
+					zoom: 15,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+
+				var map = new google.maps.Map(document.getElementById("map_canvas"),  mapOptions);
+				// Questa servirà per agganciare le indicazioni alla mappa 
+				directionsDisplay.setMap(map);
+	           
+	           /*Dichiarazione Marker*/
+	        var sede_tulug = new google.maps.LatLng(42.412180,12.103577);
+	       	var parcheggio1 = new google.maps.LatLng(42.411719,12.103046);
+	       	var parcheggio2 = new google.maps.LatLng(42.412935,12.103314);
+	       	
+	       	var imagesede = 'img/tulug.png';
+	   		var imageparcheggio = 'img/parcheggio.png'
+	   		var imagetuaposizione = 'img/tu.png';
+	   		
+	   		var contentsede = '<p style="color:black;margin-left:10px;">Sede Tulug</p>';
+	   		var contentparcheggio1 = '<p style="color:black;margin-left:10px;">Parcheggio via  del Carmine</p>';
+	   		var contentparcheggio2 = '<p style="color:black;margin-left:10px;">Parcheggio via scotolatori</p>';
+	   		var contenttu = '<p style="color:black;margin-left:10px;">La tua posizione</p>';
+
+	   		var infowindowsede = new google.maps.InfoWindow({
+	   		    content: contentsede
+	   		});
+	   		var infowindowp1 = new google.maps.InfoWindow({
+	   		    content: contentparcheggio1
+	   		});
+	   		var infowindowp2 = new google.maps.InfoWindow({
+	   		    content: contentparcheggio2
+	   		});
+	   		var infowindowtu = new google.maps.InfoWindow({
+	   		    content: contenttu
+	   		});
+	   		/*Fine dichiarazione dei marker*/
+
+	   		
+	   		
+			/*Geolocalizzazione*/
+	   	        if(navigator.geolocation) {
+	   	        	navigator.geolocation.getCurrentPosition(currentPositionCallback);
+	   			 } else {
+	   				 alert('The browser does not support geolocation');
+	   			 }
+	   	        
+	   	        function currentPositionCallback(position) {
+	   	        	var posizione = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+	   	        	map.setCenter(posizione);
+	   	        	/*Posizione ottenuta, mi disegno il marker*/
+	   	        	var markertu = new google.maps.Marker({
+	   	                 position: posizione,
+	   	                 map: map,
+	   	                 icon: imagetuaposizione,
+	   	                 title:"La tua posizione"
+	   	             });
+	   	             google.maps.event.addListener(markertu, 'click', function() {
+	   	     			  infowindowtu.open(map,markertu);
+	   	     			});
+	   	             /*Fine disegno marker*/
+	   	             
+	   	             /*Inizio calcolo rotta*/
+	   	              var percorsostart = posizione;
+	   				  var percorsoend = sede_tulug;
+	   				  var request = {
+	   				    origin:percorsostart,
+	   				    destination:percorsoend,
+	   				    travelMode: google.maps.TravelMode.DRIVING
+	   				  };
+	   				  directionsService.route(request, function(result, status) {
+	   				    if (status == google.maps.DirectionsStatus.OK) {
+	   				      directionsDisplay.setDirections(result);
+	   				    } 
+	   				  });
+	   	             /*Fine calcolo rotta*/
+	   	             
+	   	        } /*Fine callbackfunction della geolocalizzazione*/
+	   		
+	           
+	           
+	        /* Marker delle mappe di Sede, Parcheggio1, Parcheggio2 */    
+	   		var markersede = new google.maps.Marker({
+	               position: sede_tulug,
+	               map: map,
+	               icon: imagesede,
+	               title:"Sede TuLUG"
+	           });
+	   		google.maps.event.addListener(markersede, 'click', function() {
+	   			  infowindowsede.open(map,markersede);
+	   			});
+	   		
+	           var markerp1 = new google.maps.Marker({
+	               position: parcheggio1,
+	               map: map,
+	               icon: imageparcheggio,
+	               title:"Parcheggio Via del Carmine"
+	           });
+	           google.maps.event.addListener(markerp1, 'click', function() {
+	   			  infowindowp1.open(map,markerp1);
+	   			});
+	           
+	           var markerp2 = new google.maps.Marker({
+	               position: parcheggio2,
+	               map: map,
+	               icon: imageparcheggio,
+	               title:"Parcheggio Via scotolatori"
+	           });
+	           google.maps.event.addListener(markerp2, 'click', function() {
+	   			  infowindowp2.open(map,markerp2);
+	   			});
+	           /*Fine Markers*/
+	           
+	         } /*Fine funzione initzialize*/
+	
+	            // Inizializza tutto all'apertura di details-page (il div della mappa)
+	            $('#mappa').on('pagecreate', function() {
+	                if (map == null) {
+	                    initialize();
+	                }
+					$("#btngeo").click(function(e){
+					e.preventDefault();
+					initialize();
+					return false;
+					});
+	            });
+	
+	    </script>
+	<!--  FINE MAPPA -->  
+		
+	<!--  CORSI -->     
+		<div id="corsi" data-role="page" class="page">
+			<div data-role="header" data-theme="a">
+				<h3>Corsi TuLUG</h3>
+				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home" data-ajax="false">Home</a>
+			</div>
+			<div data-role="content" data-theme="a">
+				<ul data-role="listview" data-filter="true" id="articleList">
+					<!-- Creo dinamicamente i <li> -->
+					<script>
+						var maxLength = 25;
+						for(var i=1; i<=maxLength; i++){
+							document.write('<li id="list' + i + '"><a href="#article' + i + '" id="link' + i + '">&nbsp;</a></li>');
+						}
+					</script>
+				</ul>
+			</div>
+		</div>
+				
+		<!-- Creo dinamicamente i <div> delle pagine -->
+			<script>
+				for(i=1; i<=maxLength; i++){
+					document.write(
+						'<div data-role="page" id="article' + i + '">' +
+						'  <div data-role="header" data-position="inline">' +
+						'    <a href="#corsi" data-role="button" data-icon="home" data-back="true">Indietro</a>' +
+						'    <h1 id="articleHeader' + i + '">&nbsp;</h1>' +
+						'    <a href="#" target="_blank" id="openButton' + i + '" data-role="button" data-icon="plus"' +
+						'      class="ui-btn-right" rel="external">Apri</a>' +
+						'  </div>' +
+						'  <div data-role="content">' +
+						'    <div id="articleContent' + i + '" class="articleContent"></div>' +
+						'    <div data-role="controlgroup" data-type="horizontal">' +
+						'      <a href="#article' + String(i-1) + '" data-role="button" data-icon="arrow-l"' +
+						'        data-inline="true" class="prevButton">Prev</a>' +
+						'      <a href="#article' + String(i+1) + '" data-role="button" data-icon="arrow-r"' +
+						'        data-inline="true" class="nextButton" data-iconpos="right">Next</a>' +
+						'    </div>' +
+						'  </div>' +
+						'</div>'
+					);
+				}
+			</script>
+				
+		<!-- Avvio lo script di fetch -->
+			<script>
+				$('#corsi').on('pagecreate',(function(){
+					getOnlineFeed('http://www.tulug.it/feed/');
+				}));
+				
+				/* functions */
+					var listEntries = function(json) {
+					  if (!json.responseData.feed.entries) return false;
+					  $('#widgetTitle').text(json.responseData.feed.title);
+					  var articleLength =json.responseData.feed.entries.length;
+					  articleLength = (articleLength > maxLength) ? maxLength : articleLength;
+					  for (var i = 1; i <= articleLength ; i++) {
+						var entry = json.responseData.feed.entries[i-1];
+						$('#link' + i).text(entry.title);
+						$('#articleHeader' + i).text(entry.title);
+						$('#openButton' + i).attr('href', entry.link);
+						$('#articleContent' + i).append(entry.content);
+					  }
+					  $('#article1 .prevButton').remove();
+					  $('#article' + articleLength + ' .nextButton').remove();
+					  if (articleLength < maxLength) {
+						for (i = articleLength + 1; i <= maxLength; i++) {
+						  $('#list' + i).remove();
+						  $('#article' + i).remove();
+						}
+					  }
+					};
+					var getOnlineFeed = function(url) {
+					  var script = document.createElement('script');
+					  script.setAttribute('src', 'http://ajax.googleapis.com/ajax/services/feed/load?callback=listEntries&hl=ja&output=json-in-script&q='
+										  + encodeURIComponent(url)
+										  + '&v=1.0&num=' + maxLength);
+					  script.setAttribute('type', 'text/javascript');
+					  document.documentElement.firstChild.appendChild(script);
+					};
+					var getOfflineFeed = function(url) {
+					  var script = document.createElement('script');
+					  script.setAttribute('src', url);
+					  script.setAttribute('type', 'text/javascript');
+					  document.documentElement.firstChild.appendChild(script);
+					};
+			</script>
+				
+		<!-- FINE CORSI -->
+		
+		<!--  CALENDARIO -->   
+		<link rel='stylesheet' type='text/css' href='fullcalendar/fullcalendar.css' />
+		<link rel='stylesheet' type='text/css' href='fullcalendar/fullcalendar.print.css' media='print' />
+		<script type='text/javascript' src='fullcalendar/fullcalendar.min.js'></script>
+		<script type='text/javascript' src='fullcalendar/gcal.js'></script>		
+		
+  			<div id="calendario" data-role="page" class="page">
+        	    <div data-role="header" data-theme="a">
+        	        <h3>Calendario</h3>
+        	        <a href="#" data-rel="back" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home" data-ajax="false">Home</a>
+				</div>
+	            <div data-role="content" data-theme="a">
+	                <div id='loading' style='display:none'>CARICAMENTO...</div>
+					<div id='calendar'></div>
+	            </div>
+			
+				<script type='text/javascript'>
+					$('#calendario').on('pageshow', function() {
+						$('#calendar').fullCalendar({
+							events: 'https://www.google.com/calendar/feeds/tuscialug%40gmail.com/public/basic',
+							eventClick: function(event) {
+								// opens events in a popup window
+								window.open(event.url, 'gcalevent', 'width=700,height=600');
+								return false;
+							},
+							
+							loading: function(bool) {
+								if (bool) {
+									$('#loading').show();
+								}else{
+									$('#loading').hide();
+								}
+							}
+						});
+					});
+				</script>
+				
+			</div>
+		<!-- FINE CALENDARIO -->
+		
+		<!-- MAILING LIST -->     
+		<div id="ml" data-role="page" class="page">
+		<div data-role="header" data-theme="a">
+			<h3>Mailing List</h3>
+        	<a href="#" data-rel="back" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home" data-ajax="false">Home</a>
+       	</div>
+		<div data-role="content" data-theme="a">
+			<center><img src="./img/logo.png" /></center>
+			<br><br>
+			<form method="POST" action="http://lists.tulug.it/mailman/subscribe/winebar"  target="_blank">
+				  <label for="login_unameLabel">E-Mail:</label><br>
+				  <input type="text" name="email" id="email" /><br>
+
+				  <label for="login_pwordLabel">Nome:</label><br>  
+				  <input type="text" name="fullname" id="fullname" /><br>
+
+				  <label for="login_pwordLabel">Password:</label><br>  
+				  <input type="text" name="pw" id="pw" /><br>
+				  
+				  <label for="login_pwordLabel">Ripeti Password:</label><br>  
+				  <input type="text" name="pw-conf" id="pw-conf" /><br>
+				  
+				  <button id="login_submit" type="submit" data-theme="a">Iscriviti</button>
+			</form>
+	    </div>
+	</div>
+			
+<!-- FINE MAILING LIST -->
+
+<!-- DIRETTIVO -->     
+	<div id="direttivo" data-role="page" class="page">
+		<div data-role="header" data-theme="a">
+			<h3>Contattaci</h3>
+        	<a href="index.html" data-rel="back" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home" data-ajax="false">Home</a>
+       	</div>
+		<div data-role="content" data-theme="a">
+			<ul data-role="listview" data-filter="true">
+				<li>
+					<a href="#info-simone" data-rel="popup" data-position-to="window" data-transition="pop">
+						<p class="my_icon_wrapper">
+						<img src="img/faccia_sconosciuto.jpg" width="75" height="75"/>
+						</p>
+						<h3>Simone Quatrini</h3>
+						<p>Presidente</p>
+					</a>
+				</li>
+				<li>
+					<a href="#info-mauro" data-rel="popup" data-position-to="window" data-transition="pop">
+						<p class="my_icon_wrapper">
+						<img src="img/faccia_sconosciuto.jpg" width="75" height="75"/>
+						</p>
+						<h3>Mauro Gasperini</h3>
+						<p>Vice Presidente</p>
+					</a>
+				</li>
+				<li>
+					<a href="#info-ivan" data-rel="popup" data-position-to="window" data-transition="pop">
+						<p class="my_icon_wrapper">
+						<img src="img/faccia_sconosciuto.jpg" width="75" height="75"/>
+						</p>
+						<h3>Ivan Gualandri</h3>
+						<p>Tesoriere</p>
+					</a>
+				</li>
+				<li>
+					<a href="#info-lorenzo" data-rel="popup" data-position-to="window" data-transition="pop">
+						<p class="my_icon_wrapper">
+						<img src="img/faccia_sconosciuto.jpg" width="75" height="75"/>
+						</p>
+						<h3>Lorenzo Quatrini</h3>
+						<p>Segretario</p>
+					</a>
+				</li>
+			</ul>
+			
+	    </div>
+		
+		<!-- Info Simone -->
+		<div data-role="popup" id="info-simone" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+			<h3>Simone Quatrini</h3>
+			<p>Classe 1988, si avvicina al mondo Linux all'eta' di 15 anni. Ha frequentato l'Istituto Tecnico Industriale diplomandosi con 81/100</p>
+			<a href="mailto:simone@tulug.it" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true">Contatta</a>
+			<a href="#" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true" onClick="salvasimone();">Salva numero</a>
+			<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Indietro</a>
+		</div>
+				
+		<!-- Info Mauro -->
+		<div data-role="popup" id="info-mauro" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+			<h3>Mauro Gasperini</h3>
+			<p>Descrizione</p>
+			<a href="mailto:mauro@tulug.it" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true">Contatta</a>
+			<a href="#" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true" onClick="salvamauro();">Salva numero</a>
+			<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Indietro</a>
+		</div>
+				
+		<!-- Info Ivan -->
+		<div data-role="popup" id="info-ivan" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+			<h3>Ivan Gualandri</h3>
+			<p>Descrizione</p>
+			<a href="mailto:ivan@tulug.it" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true">Contatta</a>
+			<a href="#" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true" onClick="salvaivan();">Salva numero</a>
+			<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Indietro</a>
+		</div>
+				
+		<!-- Info Lorenzo -->
+		<div data-role="popup" id="info-lorenzo" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+			<h3>Lorenzo Quatrini</h3>
+			<p>Descrizione</p>
+			<a href="mailto:lorenzo@tulug.it" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true">Contatta</a>
+			<a href="#" data-role="button" data-theme="a" data-icon="check" data-inline="true" data-mini="true" onClick="salvalorenzo();">Salva numero</a>
+			<a href="#" data-role="button" data-rel="back" data-inline="true" data-mini="true">Indietro</a>
+		</div>
+		
+	</div>
+			
+<!-- FINE DIRETTIVO -->
+    </body>
+</html>

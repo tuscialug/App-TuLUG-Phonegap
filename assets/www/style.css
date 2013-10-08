@@ -1,0 +1,59 @@
+html, body {
+    font-size: .9em;
+    font-family: Arial, Helvetica, Sans-serif;
+    background: #666666;
+    padding: 0px;
+}
+
+.my_icon_wrapper {
+        float: left; 
+        width: 80px; height: 80px;
+        text-align: center; 
+        vertical-align: middle; 
+}
+
+.details-page {
+    width: 100%;
+    height: 100%;
+}
+/*CSS Mappa*/
+#map_content {
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#map_canvas {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-shadow: none;
+}
+/*Fine CSS Mappa*/
+
+/*CSS RSS*/
+.ui-footer .ui-btn-right {}
+.articleContent > table > tbody > tr > td > font > br {
+		  display: none;
+		}
+.articleContent > table > tbody > tr > td > font > br + div {
+		  display: none;
+		}
+.articleContent * {
+		  font-size: medium !important;
+		}
+/*Fine CSS RSS*/
+
+/*CSS Calendario*/
+	#loading {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		}
+
+	#calendar {
+		width: 100%;
+		margin: 0 auto;
+		}
+/* Fine CSS Calendario*/
