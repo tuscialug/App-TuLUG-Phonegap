@@ -6,3 +6,7 @@ App del TULUG sviluppata con la tecnologia jquerymobile e cordova. Grazie all'ai
 ==================
 
 I file si trovano in "assets/www". Il repository contiene un progetto Android già funzionante. Basterà importarlo in Android Studio e compilarlo. Questo genererà l'APK da installare
+
+==================
+
+Per chiarimenti e consigli: http://www.tulug.it - info@tulug.it
